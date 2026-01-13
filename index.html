@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Seokho Ahn | CV</title>
+  <title>Seokho Ahn| CV</title>
   <meta name="description" content="Seokho Ahn — CV" />
   <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,77 +12,107 @@
 
   <style>
     :root{
-      /* Minimal, airy */
       --bg:#ffffff;
-      --text:#111827;
-      --muted:#6b7280;
-      --muted2:#9ca3af;
-      --line:#eceef2;
+      --text:#0b1220;
+      --muted:#5b677a;
+      --muted2:#94a3b8;
+      --line:#eef2f7;
 
-      /* Accent: tiny usage (swap to any hue) */
-      --accent:#0f766e;         /* teal */
-      --accent-weak:#e6fffb;    /* very light teal */
+      /* Section emphasis (more visible, still minimal) */
+      --section-accent:#1d4ed8;     /* blue */
+      --section-accent-soft:#eff6ff;
 
-      --max: 920px;
-      --pad: 22px;
+      --max: 980px;
+
+      /* Spacing */
+      --section-gap: 34px;
+      --section-head-gap: 12px;
+
+      --item-pad-y: 10px;   /* per-item block padding */
+      --item-gap: 12px;     /* gap between items */
+
+      /* Within-item spacing (reduce “line spacing” for sub-lines) */
+      --meta-top: 4px;
+      --desc-top: 6px;
     }
 
     *{ box-sizing:border-box; }
-    html,body{ height:100%; }
     body{
       margin:0;
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic", sans-serif;
       background:var(--bg);
       color:var(--text);
-      line-height:1.6;
+      line-height:1.68;
       letter-spacing:-0.01em;
     }
     a{ color:inherit; text-decoration:none; }
     a:hover{ text-decoration:underline; }
 
-    .wrap{ max-width:var(--max); margin:0 auto; padding: 26px 18px 72px; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding: 34px 18px 96px; }
 
-    /* Header (no big boxes) */
+    /* Header: photo ABOVE name for wider feel */
     header{
-      padding-bottom: 14px;
+      padding-bottom: 22px;
       border-bottom: 1px solid var(--line);
-      margin-bottom: 18px;
+      margin-bottom: 22px;
     }
+
+    .photo{
+      width: 240px;
+      height: 240px;
+      border-radius: 999px;
+      border: 1px dashed #d6dde8;
+      background: linear-gradient(180deg, rgba(29,78,216,.06), rgba(29,78,216,0));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color: var(--muted2);
+      font-size: 12px;
+      user-select:none;
+      margin-bottom: 14px;
+    }
+    .photo small{
+      display:block;
+      text-align:center;
+      line-height:1.25;
+      padding: 0 10px;
+    }
+
     .name{
       margin:0;
-      font-size: 28px;
-      line-height:1.2;
-      letter-spacing:-0.03em;
-      font-weight: 750;
+      font-size: 34px;
+      line-height:1.12;
+      letter-spacing:-0.035em;
+      font-weight: 800;
     }
     .subtitle{
-      margin: 8px 0 0;
+      margin: 10px 0 0;
       color: var(--muted);
-      font-size: 13.5px;
-      max-width: 75ch;
+      font-size: 14px;
+      max-width: 90ch;
     }
 
     .topline{
-      margin-top: 12px;
+      margin-top: 14px;
       display:flex;
       flex-wrap: wrap;
       gap: 10px 14px;
       align-items: center;
       color: var(--muted);
-      font-size: 12.5px;
+      font-size: 12.8px;
     }
-    .topline strong{ color: var(--text); font-weight: 650; }
+    .topline strong{ color: var(--text); font-weight: 720; }
     .sep{ color: var(--muted2); }
 
     .actions{
-      margin-top: 14px;
+      margin-top: 16px;
       display:flex;
       flex-wrap: wrap;
       gap: 8px;
     }
     .btn{
       font-size: 12px;
-      font-weight: 650;
+      font-weight: 700;
       padding: 8px 10px;
       border-radius: 10px;
       border: 1px solid var(--line);
@@ -91,105 +121,193 @@
       color: var(--text);
       transition: .12s ease;
     }
-    .btn:hover{ background: #fafafa; text-decoration:none; }
+    .btn:hover{ background:#fafafa; text-decoration:none; }
     .btn.accent{
-      border-color: rgba(15,118,110,.18);
-      background: var(--accent-weak);
-      color: var(--accent);
+      border-color: rgba(29,78,216,.18);
+      background: var(--section-accent-soft);
+      color: var(--section-accent);
     }
 
-    /* Minimal section styling */
-    section{ padding: 14px 0; border-bottom: 1px solid var(--line); }
-    section:last-of-type{ border-bottom: none; }
+    /* Major sections */
+    section.major{ margin-top: var(--section-gap); }
+    section.major:first-of-type{ margin-top: 22px; }
 
-    .section-title{
+    /* Section header: more visible (color + small underline bar) */
+    .section-head{
       display:flex;
       align-items: baseline;
       justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 10px;
+      gap: 12px;
+      margin-bottom: var(--section-head-gap);
     }
     h2{
       margin:0;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: .02em;
-      text-transform: uppercase;
-      color: var(--muted);
+      font-size: 16px;
+      font-weight: 850;
+      letter-spacing:-0.02em;
+      color: var(--text);
+      display:flex;
+      align-items:center;
+      gap: 10px;
+    }
+    .section-pill{
+      display:inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--section-accent);
+      opacity: .95;
+      transform: translateY(1px);
     }
     .hint{
       font-size: 12px;
       color: var(--muted2);
     }
-
-    /* List items: no boxes, just spacing + subtle divider */
-    .list{ display:flex; flex-direction: column; gap: 12px; }
-    .item{
-      padding: 2px 0;
+    .section-underline{
+      height: 1px;
+      background: var(--line);
+      margin-top: 10px;
+      position: relative;
     }
+    .section-underline::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:-1px;
+      height: 3px;
+      width: 54px;
+      border-radius: 999px;
+      background: var(--section-accent);
+      opacity: .22; /* subtle */
+    }
+
+    /* Items (no forced dividers; feel grouped by padding) */
+    .list{
+      display:flex;
+      flex-direction: column;
+      gap: var(--item-gap);
+      margin-top: 14px;
+    }
+    .item{
+      display:grid;
+      grid-template-columns: 16px 1fr;
+      gap: 12px;
+      align-items:start;
+      padding: var(--item-pad-y) 0;
+    }
+
+    /* Bullet: black */
+    .dot{
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #000;
+      margin-top: 6px;
+      opacity: .92;
+    }
+
     .title-row{
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto; /* 왼쪽은 줄바꿈, 오른쪽은 고정 */
+      column-gap: 30px;
+      align-items: start; /* 날짜는 첫 줄 기준으로 붙음 */
+    }
+
+    .title{
+      min-width: 0;           /* grid에서 줄바꿈 제대로 되게 */
+      font-size: 14.8px;
+      font-weight: 780;
+      line-height: 1.42;
+    }
+
+    .right{
+      white-space: nowrap;    /* 날짜 줄바꿈 방지 */
+      justify-self: end;      /* 오른쪽 끝 정렬 */
+      align-self: start;      /* 제목 첫 줄과 같은 높이 */
+      font-size: 12.4px;
+      color: var(--muted);
+      white-space: nowrap;
+      font-weight: 650;
+    }
+
+    /* .title-row{
       display:flex;
       align-items: baseline;
       justify-content: space-between;
-      gap: 12px;
+      gap: 14px;
       flex-wrap: wrap;
     }
     .title{
       margin:0;
-      font-size: 14px;
-      font-weight: 750;
-      line-height: 1.35;
-      color: var(--text);
+      font-size: 14.8px;
+      font-weight: 780;
+      line-height: 1.42;
     }
     .right{
-      font-size: 12px;
+      font-size: 12.4px;
       color: var(--muted);
       white-space: nowrap;
-    }
+      font-weight: 650;
+    } */
+
+    /* Sub-lines: tighter */
     .meta{
-      margin-top: 4px;
+      margin-top: var(--meta-top);
       color: var(--muted);
-      font-size: 12.5px;
+      font-size: 12.9px;
+      line-height: 1.45;
       display:flex;
       flex-wrap: wrap;
       gap: 6px 12px;
     }
-    .desc{
-      margin-top: 6px;
+
+    .authors{
+      min-width: 0;
       color: var(--muted);
-      font-size: 12.8px;
+    }
+    .authors .tag{
+      margin-right: 8px;    /* oral tag spacing */
+    }
+    .desc{
+      margin-top: var(--desc-top);
+      color: var(--muted);
+      font-size: 13.0px;
+      line-height: 1.55;
+      max-width: 95ch;
     }
 
-    /* Tiny accent marker (optional, low weight) */
-    .mark{
+    .tag{
       display:inline-block;
-      width: 8px;
-      height: 8px;
+      font-size: 11.6px;
+      padding: 1px 6px;
       border-radius: 999px;
-      background: var(--accent);
-      margin-right: 8px;
+      border: 1px solid rgba(29,78,216,.18);
+      background: rgba(29,78,216,.06);
+      color: var(--section-accent);
+      font-weight: 750;
+      margin-left: 6px;
       transform: translateY(-1px);
     }
 
-    /* Publications controls (minimal) */
+    /* Publications controls */
     .pub-controls{
       display:flex;
       align-items:center;
       justify-content: space-between;
-      gap: 10px;
+      gap: 12px;
       flex-wrap: wrap;
-      margin: 8px 0 6px;
+      margin: 14px 0 8px;
     }
-    .search{ flex:1 1 260px; }
+    .search{ flex:1 1 280px; }
     .search input{
       width: 100%;
       border: 1px solid var(--line);
       background: #fff;
       color: var(--text);
       border-radius: 10px;
-      padding: 10px 12px;
+      padding: 11px 12px;
       outline: none;
-      font-size: 12.5px;
+      font-size: 12.8px;
     }
     .filters{ display:flex; gap: 6px; flex-wrap: wrap; }
     .filter{
@@ -205,13 +323,15 @@
     }
     .filter:hover{ background:#fafafa; }
     .filter.active{
-      border-color: rgba(15,118,110,.18);
-      background: var(--accent-weak);
-      color: var(--accent);
+      border-color: rgba(29,78,216,.18);
+      background: var(--section-accent-soft);
+      color: var(--section-accent);
     }
 
     footer{
-      margin-top: 18px;
+      margin-top: 40px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
       color: var(--muted2);
       font-size: 12px;
       display:flex;
@@ -220,9 +340,14 @@
       flex-wrap: wrap;
     }
 
+    @media (max-width: 720px){
+      .right{ white-space: normal; }
+      .photo{ width: 120px; height: 120px; }
+    }
     @media print{
       .pub-controls, .actions{ display:none !important; }
-      body{ background:#fff; }
+      .photo{ border-style: solid; border-color: #ddd; background: #fff; }
+      section.major{ margin-top: 22px; }
     }
   </style>
 </head>
@@ -230,28 +355,31 @@
 <body>
   <div class="wrap">
     <header id="about">
-      <h1 class="name">Seokho Ahn</h1>
+      <!-- Replace with <img class="photo-img" src="assets/photo.jpg" alt="<strong>Seokho Ahn</strong>" /> if desired -->
+      <div class="photo" aria-label="Profile photo placeholder">
+        <small>Profile photo<br/>140×140</small>
+      </div>
+
+      <h1 class="name"><strong>Seokho Ahn</strong></h1>
       <p class="subtitle">
-        Ph.D. student at the Knowledge-based Data Discovery Lab, Inha University. Interests include time-series analysis,
+        Ph.D. student at the Knowledge-based Data Discovery Lab, Inha University. <br>
+        Interests include time-series analysis,
         IoT calibration, recommender systems, NLP, GNNs, and knowledge graphs.
       </p>
 
       <div class="topline">
-        <span><strong>Incheon</strong>, Republic of Korea</span>
+        <span><strong>ECE @ Inha University</strong></span>
         <span class="sep">·</span>
-        <span><strong>ECE</strong> @ Inha University</span>
+        <span>Incheon, Republic of Korea</span>
+        <!-- <span class="sep">·</span>
+        <span>Expected Ph.D. graduation: <strong>Aug 2027</strong></span> -->
         <span class="sep">·</span>
-        <span>Expected Ph.D. graduation: <strong>Aug 2027</strong></span>
-        <span class="sep">·</span>
-        <span><a href="mailto:sokho0514@gmail.com"><strong>sokho0514@gmail.com</strong></a></span>
-        <span class="sep">·</span>
-        <span><strong>+82 10-4903-1420</strong></span>
+        <span><strong>sokho0514 [at] inha.edu</strong></span>
       </div>
 
       <div class="actions">
-        <a class="btn accent" href="assets/cv.pdf">PDF</a>
-        <button class="btn" onclick="window.print()">Print</button>
-        <!-- Replace with real links -->
+        <!-- <a class="btn accent" href="assets/cv.pdf">PDF</a>
+        <button class="btn" onclick="window.print()">Print</button> -->
         <a class="btn" href="https://scholar.google.com/" target="_blank" rel="noreferrer">Scholar</a>
         <a class="btn" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
         <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
@@ -260,56 +388,61 @@
     </header>
 
     <!-- EDUCATION -->
-    <section id="education">
-      <div class="section-title">
-        <h2><span class="mark" aria-hidden="true"></span>Education</h2>
-        <div class="hint">degrees</div>
+    <section class="major" id="education">
+      <div class="section-head">
+        <h2><span class="section-pill" aria-hidden="true"></span>Education</h2>
+        <!-- <div class="hint">degrees</div> -->
       </div>
+      <div class="section-underline" aria-hidden="true"></div>
 
       <div class="list">
         <div class="item">
-          <div class="title-row">
-            <div class="title">Ph.D. in Electrical and Computer Engineering, Inha University</div>
-            <div class="right">Expected Aug 2027</div>
-          </div>
-          <div class="meta">
-            <span>Incheon</span><span>GPA: 4.5 / 4.5</span>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="title">M.S. in Electrical and Computer Engineering, Inha University</div>
-            <div class="right">Aug 2023</div>
-          </div>
-          <div class="meta">
-            <span>Incheon</span><span>GPA: 4.43 / 4.5</span>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">Ph.D. in Electrical and Computer Engineering, Inha University</div>
+              <div class="right">Expected Aug 2027</div>
+            </div>
+            <div class="meta"><span>GPA: 4.5 / 4.5</span></div>
           </div>
         </div>
 
         <div class="item">
-          <div class="title-row">
-            <div class="title">B.S. in Mathematics Education &amp; B.S. in Computer Science and Engineering (Dual Degree), Inha University</div>
-            <div class="right">Aug 2021</div>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">M.S. in Electrical and Computer Engineering, Inha University</div>
+              <div class="right">Aug 2023</div>
+            </div>
+            <div class="meta"><span>GPA: 4.43 / 4.5</span></div>
           </div>
-          <div class="meta">
-            <span>GPA: 4.29 / 4.5</span>
-            <span>Major GPA: 4.39 / 4.5</span>
-            <span>Highest honor (1/42)</span>
-          </div>
-          <div class="desc">
-            Scholarships: National Science &amp; Technology (2019–2020); Academic Excellence (Fall 2017, 2018).
+        </div>
+
+        <div class="item">
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">B.S. in Mathematics Education &amp; B.S. in Computer Science and Engineering (Dual Degree), Inha University</div>
+              <div class="right">Aug 2021</div>
+            </div>
+            <div class="meta">
+              <span>GPA: 4.29 / 4.5</span>
+              <span>Major GPA: 4.39 / 4.5</span>
+              <span>Highest honor (1/42)</span>
+            </div>
+            <div class="desc">Scholarships: National Science &amp; Technology (2019–2020); Academic Excellence (Fall 2017, 2018).</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PUBLICATIONS -->
-    <section id="publications">
-      <div class="section-title">
-        <h2><span class="mark" aria-hidden="true"></span>International publications</h2>
-        <div class="hint">search + filter</div>
+    <!-- INTERNATIONAL PUBLICATIONS -->
+    <section class="major" id="publications">
+      <div class="section-head">
+        <h2><span class="section-pill" aria-hidden="true"></span>International publications</h2>
+        <!-- <div class="hint">search + filter</div> -->
       </div>
+      <div class="section-underline" aria-hidden="true"></div>
 
       <div class="pub-controls">
         <div class="search">
@@ -324,320 +457,411 @@
 
       <div class="list" id="pubList">
         <div class="item pub" data-type="conference" data-year="2025" data-keywords="aaai calibration sensor time-series iot">
-          <div class="title-row">
-            <div class="title">Real-time Calibration Model for Low-cost Sensor in Fine-grained Time series</div>
-            <div class="right">AAAI 2025</div>
-          </div>
-          <div class="meta">
-            <span>Proceedings of the AAAI Conference on Artificial Intelligence</span>
-            <span>Seokho Ahn; Hyungjin Kim; Sungbok Shin; Young-Duk Seo</span>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">Real-Time Calibration Model for Low-Cost Sensor in Fine-Grained Time Series</div>
+              <div class="right">AAAI 2025</div>
+            </div>
+            <div class="meta">
+              <span><strong>Seokho Ahn</strong>; Hyungjin Kim; Sungbok Shin; Young-Duk Seo</span>
+            </div>
           </div>
         </div>
 
         <div class="item pub" data-type="conference" data-year="2025" data-keywords="sac knowledge graph llm interoperability recommender oral">
-          <div class="title-row">
-            <div class="title">Topic-Aware Knowledge Graph with Large Language Models for Interoperability in Recommender Systems (Oral)</div>
-            <div class="right">SAC 2025</div>
-          </div>
-          <div class="meta">
-            <span>ACM/SIGAPP Symposium on Applied Computing</span>
-            <span>Minhye Jeon; Seokho Ahn; Young-Duk Seo</span>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">Topic-Aware Knowledge Graph with Large Language Models for Interoperability in Recommender Systems<span class="tag">Oral</span></div>
+              <div class="right">SAC 2025</div>
+            </div>
+            <div class="meta">
+              <span>Minhye Jeon; <strong>Seokho Ahn</strong>; Young-Duk Seo</span>
+            </div>
           </div>
         </div>
 
         <div class="item pub" data-type="conference" data-year="2025" data-keywords="sac korean text analyzer oral nlp">
-          <div class="title-row">
-            <div class="title">UKTA: Unified Korean Text Analyzer (Oral)</div>
-            <div class="right">SAC 2025</div>
-          </div>
-          <div class="meta">
-            <span>ACM/SIGAPP Symposium on Applied Computing</span>
-            <span>Seokho Ahn*; Junhyung Park*; Ganghee Go*; et al. (* equal contribution)</span>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">UKTA: Unified Korean Text Analyzer<span class="tag">Oral</span></div>
+              <div class="right">SAC 2025</div>
+            </div>
+            <div class="meta">
+              <div class="author"><strong>Seokho Ahn</strong>*; Junhyung Park*; Ganghee Go*; Chulhui Kim; Jiho Jung; Myung Sun Shin; Do-Guk Kim; Young Duk Seo (* equal contribution)</div>
+            </div>
           </div>
         </div>
 
         <div class="item pub" data-type="journal" data-year="2024" data-keywords="ieee iot journal calibration sensors">
-          <div class="title-row">
-            <div class="title">SenDaL: An Effective and Efficient Calibration Framework of Low-cost Sensors for Daily Life</div>
-            <div class="right">IoT-J 2024</div>
-          </div>
-          <div class="meta">
-            <span>IEEE Internet of Things Journal 11(11), Jun 2024</span>
-            <span>Seokho Ahn; Hyungjin Kim; Euijong Lee; Young-Duk Seo</span>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">SenDaL: An Effective and Efficient Calibration Framework of Low-cost Sensors for Daily Life</div>
+              <div class="right">IoTJ 2024</div>
+            </div>
+            <div class="meta">
+              <span><strong>Seokho Ahn</strong>; Hyungjin Kim; Euijong Lee; Young-Duk Seo</span>
+            </div>
           </div>
         </div>
 
         <div class="item pub" data-type="journal" data-year="2024" data-keywords="softwarex korean cohesion morpheme">
-          <div class="title-row">
-            <div class="title">Morpheme-based Korean text cohesion analyzer</div>
-            <div class="right">SoftwareX 2024</div>
-          </div>
-          <div class="meta">
-            <span>SoftwareX, Vol. 26, May 2024</span>
-            <span>Dong-Hyun Kim*; Seokho Ahn*; Euijong Lee; Young-Duk Seo (* equal contribution)</span>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">Morpheme-based Korean text cohesion analyzer</div>
+              <div class="right">SoftwareX 2024</div>
+            </div>
+            <div class="meta">
+              <span>Dong-Hyun Kim*; <strong>Seokho Ahn</strong>*; Euijong Lee; Young-Duk Seo (* equal contribution)</span>
+            </div>
           </div>
         </div>
 
         <div class="item pub" data-type="conference" data-year="2024" data-keywords="sac knowledge graph recommender oral">
-          <div class="title-row">
-            <div class="title">RecKG: Knowledge Graph for Recommender Systems (Oral)</div>
-            <div class="right">SAC 2024</div>
-          </div>
-          <div class="meta">
-            <span>ACM/SIGAPP Symposium on Applied Computing</span>
-            <span>Junhyuk Kwon; Seokho Ahn; Young-Duk Seo</span>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">RecKG: Knowledge Graph for Recommender Systems<span class="tag">Oral</span></div>
+              <div class="right">SAC 2024</div>
+            </div>
+            <div class="meta">
+              <span>Junhyuk Kwon; <strong>Seokho Ahn</strong>; Young-Duk Seo</span>
+            </div>
           </div>
         </div>
 
         <div class="item pub" data-type="conference" data-year="2024" data-keywords="icce low-cost sensors home devices oral">
-          <div class="title-row">
-            <div class="title">Practical Implementation of Upgraded Low-Cost Sensors in Everyday Home Devices (Oral)</div>
-            <div class="right">ICCE 2024</div>
-          </div>
-          <div class="meta">
-            <span>IEEE International Conference on Consumer Electronics</span>
-            <span>Seokho Ahn; Hyungjin Kim; Euijong Lee; Young-Duk Seo</span>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">Practical Implementation of Upgraded Low-Cost Sensors in Everyday Home Devices<span class="tag">Oral</span></div>
+              <div class="right">ICCE 2024</div>
+            </div>
+            <div class="meta">
+              <span><strong>Seokho Ahn</strong>; Hyungjin Kim; Euijong Lee; Young-Duk Seo</span>
+            </div>
           </div>
         </div>
 
         <div class="item pub" data-type="conference" data-year="2023" data-keywords="sac relation modeling knowledge graph interoperability oral">
-          <div class="title-row">
-            <div class="title">Relation Modeling on Knowledge Graph for Interoperability in Recommender Systems (Oral)</div>
-            <div class="right">SAC 2023</div>
-          </div>
-          <div class="meta">
-            <span>ACM/SIGAPP Symposium on Applied Computing</span>
-            <span>SeungJoo Lee*; Seokho Ahn*; Young-Duk Seo (* equal contribution)</span>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">Relation Modeling on Knowledge Graph for Interoperability in Recommender Systems<span class="tag">Oral</span></div>
+              <div class="right">SAC 2023</div>
+            </div>
+            <div class="meta">
+              <span>SeungJoo Lee*; <strong>Seokho Ahn</strong>*; Young-Duk Seo (* equal contribution)</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- PATENTS -->
-    <section id="patents">
-      <div class="section-title">
-        <h2><span class="mark" aria-hidden="true"></span>Patents</h2>
-        <div class="hint">applications</div>
+    <section class="major" id="patents">
+      <div class="section-head">
+        <h2><span class="section-pill" aria-hidden="true"></span>Patents</h2>
       </div>
+      <div class="section-underline" aria-hidden="true"></div>
 
       <div class="list">
         <div class="item">
-          <div class="title-row">
-            <div class="title">Internet of things device and a statistical data management system for both the public space management and the seat hogging problem based on cloud</div>
-            <div class="right">Apr 2021</div>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">Internet of things device and a statistical data management system for both the public space management and the seat hogging problem based on cloud</div>
+              <div class="right">Apr 2021</div>
+            </div>
+            <div class="meta"><span>KR 10-2021-0043531</span><span>Young-Duk Seo; Yeongdong Han; <strong>Seokho Ahn</strong>; Jongeun Lee</span></div>
           </div>
-          <div class="meta"><span>KR 10-2021-0043531</span><span>Young-Duk Seo; Yeongdong Han; Seokho Ahn; Jongeun Lee</span></div>
         </div>
 
         <div class="item">
-          <div class="title-row">
-            <div class="title">Integration Method and System for Heterogeneous Feedback for the Personalized Recommendation</div>
-            <div class="right">Dec 2022</div>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">Integration Method and System for Heterogeneous Feedback for the Personalized Recommendation</div>
+              <div class="right">Dec 2022</div>
+            </div>
+            <div class="meta"><span>KR 10-2022-0167467</span><span>Young-Duk Seo; SeungJoo Lee; <strong>Seokho Ahn</strong> · Pending</span></div>
           </div>
-          <div class="meta"><span>KR 10-2022-0167467</span><span>Young-Duk Seo; SeungJoo Lee; Seokho Ahn · Pending</span></div>
         </div>
 
         <div class="item">
-          <div class="title-row">
-            <div class="title">A Calibration Model for Improving the Performance of Low-Cost Fine-Dust Sensors in Measuring Indoor Particulate Matter</div>
-            <div class="right">Dec 2022</div>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">A Calibration Model for Improving the Performance of Low-Cost Fine-Dust Sensors in Measuring Indoor Particulate Matter</div>
+              <div class="right">Dec 2022</div>
+            </div>
+            <div class="meta"><span>KR 10-2759078</span><span>Young-Duk Seo; <strong>Seokho Ahn</strong></span></div>
           </div>
-          <div class="meta"><span>KR 10-2759078</span><span>Young-Duk Seo; Seokho Ahn</span></div>
         </div>
 
         <div class="item">
-          <div class="title-row">
-            <div class="title">Korean Cohesion and Coherence Analysis Method and System using Korean Morpheme Analyzer</div>
-            <div class="right">Dec 2023</div>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">Korean Cohesion and Coherence Analysis Method and System using Korean Morpheme Analyzer</div>
+              <div class="right">Dec 2023</div>
+            </div>
+            <div class="meta"><span>KR 10-2023-0186092</span><span>Young-Duk Seo; Dong-Hyun Kim; <strong>Seokho Ahn</strong> · Pending</span></div>
           </div>
-          <div class="meta"><span>KR 10-2023-0186092</span><span>Young-Duk Seo; Dong-Hyun Kim; Seokho Ahn · Pending</span></div>
         </div>
       </div>
     </section>
 
     <!-- EXPERIENCE -->
-    <section id="experience">
-      <div class="section-title">
-        <h2><span class="mark" aria-hidden="true"></span>Research experience</h2>
-        <div class="hint">roles</div>
+    <section class="major" id="experience">
+      <div class="section-head">
+        <h2><span class="section-pill" aria-hidden="true"></span>Research experience</h2>
       </div>
+      <div class="section-underline" aria-hidden="true"></div>
 
       <div class="list">
         <div class="item">
-          <div class="title-row">
-            <div class="title">Ph.D. Student, Knowledge-based Data Discovery Lab, Inha University</div>
-            <div class="right">Sep 2023 – Present</div>
-          </div>
-          <div class="meta"><span>Incheon</span></div>
-          <div class="desc">
-            Transformer-based architecture for IoT devices; explainable recommendation with LLMs; Korean text analyzer;
-            KG enrichment for unstructured data; diffusion-based personalized generation; continual learning with dynamic/static preferences.
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="title">M.S. Student, Knowledge-based Data Discovery Lab, Inha University</div>
-            <div class="right">Sep 2021 – Aug 2023</div>
-          </div>
-          <div class="meta"><span>Incheon</span></div>
-          <div class="desc">
-            KG extension to address sparsity; efficient LSTM/Transformer frameworks for daily-life time-series; IoT data pipelines;
-            comparative studies on Korean morpheme analyzers.
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">Ph.D. Student, Knowledge-based Data Discovery Lab, Inha University</div>
+              <div class="right">Sep 2023 – Present</div>
+            </div>
+            <div class="desc">
+              Transformer-based architecture for IoT devices; explainable recommendation with LLMs; Korean text analyzer;
+              KG enrichment for unstructured data; diffusion-based personalized generation; continual learning with dynamic/static preferences.
+            </div>
           </div>
         </div>
 
         <div class="item">
-          <div class="title-row">
-            <div class="title">Undergraduate Research Student, Knowledge-based Data Discovery Lab, Inha University</div>
-            <div class="right">Dec 2020 – Aug 2021</div>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">M.S. Student, Knowledge-based Data Discovery Lab, Inha University</div>
+              <div class="right">Sep 2021 – Aug 2023</div>
+            </div>
+            <div class="desc">
+              KG extension to address sparsity; efficient LSTM/Transformer frameworks for daily-life time-series; IoT data pipelines;
+              comparative studies on Korean morpheme analyzers.
+            </div>
           </div>
-          <div class="meta"><span>Incheon</span></div>
-          <div class="desc">Calibration algorithm based on fine-dust sensor data.</div>
+        </div>
+
+        <div class="item">
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">Undergraduate Research Student, Knowledge-based Data Discovery Lab, Inha University</div>
+              <div class="right">Dec 2020 – Aug 2021</div>
+            </div>
+            <div class="desc">Calibration algorithm based on fine-dust sensor data.</div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- AWARDS -->
-    <section id="awards">
-      <div class="section-title">
-        <h2><span class="mark" aria-hidden="true"></span>Selected honors and awards</h2>
-        <div class="hint">recognitions</div>
+    <section class="major" id="awards">
+      <div class="section-head">
+        <h2><span class="section-pill" aria-hidden="true"></span>Selected honors and awards</h2>
       </div>
+      <div class="section-underline" aria-hidden="true"></div>
 
       <div class="list">
         <div class="item">
-          <div class="title-row">
-            <div class="title">Dean’s Award — Awards for Inha Biryong (Outstanding Paper Award)</div>
-            <div class="right">Feb 2025</div>
-          </div>
-          <div class="meta"><span>Inha University</span></div>
-        </div>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="title">Excellence Prize — Outstanding Paper Presentation (BK21 AI R&amp;E Center)</div>
-            <div class="right">Feb 2025</div>
-          </div>
-          <div class="meta"><span>“SenDaL: …”</span></div>
-        </div>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="title">Grand Prize — Inha Industry-University Cooperation Project</div>
-            <div class="right">Dec 2021</div>
-          </div>
-          <div class="meta"><span>AI-based air purifiers with MIRO Corp.</span></div>
-        </div>
-
-        <div class="item">
-          <div class="title-row">
-            <div class="title">Excellence Prize — Incheon Start-up &amp; Public Data Competition</div>
-            <div class="right">Sep 2021</div>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">Dean’s Award — Awards for Inha Biryong (Outstanding Paper Award)</div>
+              <div class="right">Feb 2025</div>
+            </div>
+            <div class="meta"><span>Recognized for publishing in outstanding SCI journals and conferences.</span></div>
           </div>
         </div>
 
         <div class="item">
-          <div class="title-row">
-            <div class="title">Excellence Prize — Inha Super Challenge Software Hackathon</div>
-            <div class="right">Jan 2021</div>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">Excellence Prize — Outstanding Paper Presentation (BK21 AI R&amp;E Center)</div>
+              <div class="right">Feb 2025</div>
+            </div>
+            <div class="meta"><span>Presented SenDaL: An Effective and Efficient Calibration Framework of Low-cost Sensors for Daily Life.</span></div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">Grand Prize — Inha Industry-University Cooperation Project</div>
+              <div class="right">Dec 2021</div>
+            </div>
+              <div class="meta"><span>Development of Artificial Intelligence-based air purifiers with MIRO Corp. </span></div>
+            </div>
+        </div>
+
+        <div class="item">
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">Excellence Prize — Incheon Start-up &amp; Public Data Competition</div>
+              <div class="right">Sep 2021</div>
+            </div>
+            <div class="meta"><span>Competition Using Public Data. Suggested a data-driven solution that analyzes real-time congestion in the airport and guides the required time at the airport. </span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">Excellence Prize — Inha Super Challenge Software Hackathon</div>
+              <div class="right">Jan 2021</div>
+            </div>
+            <div class="meta"><span>Implemented an Internet of things device and a statistical data management system for both the public space management and the seat hogging problem based on cloud. </span></div>
+            </div>
+            
           </div>
         </div>
       </div>
     </section>
 
     <!-- TEACHING -->
-    <section id="teaching">
-      <div class="section-title">
-        <h2><span class="mark" aria-hidden="true"></span>Teaching experience</h2>
-        <div class="hint">roles</div>
+    <section class="major" id="teaching">
+      <div class="section-head">
+        <h2><span class="section-pill" aria-hidden="true"></span>Teaching experience</h2>
       </div>
+      <div class="section-underline" aria-hidden="true"></div>
 
       <div class="list">
         <div class="item">
-          <div class="title-row">
-            <div class="title">Teaching Assistant, Understanding Korean Natural Language Processing and Education Technology</div>
-            <div class="right">Spring 2024–2025</div>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">Teaching Assistant, Understanding Korean Natural Language Processing and Education Technology</div>
+              <div class="right">Spring 2024–2025</div>
+            </div>
+            <div class="meta"><span>Inha University</span></div>
           </div>
-          <div class="meta"><span>Inha University</span></div>
         </div>
 
         <div class="item">
-          <div class="title-row">
-            <div class="title">Instructor, Artificial Intelligence and Mathematics</div>
-            <div class="right">2023–2025</div>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">Instructor, Artificial Intelligence and Mathematics</div>
+              <div class="right">2023–2025</div>
+            </div>
+            <div class="meta"><span>Incheon Girls’ High School</span></div>
           </div>
-          <div class="meta"><span>Incheon Girls’ High School</span></div>
         </div>
 
         <div class="item">
-          <div class="title-row">
-            <div class="title">Mentor, K-Software Empowerment BootCamp Academy</div>
-            <div class="right">Fall 2022</div>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">Mentor, K-Software Empowerment BootCamp Academy</div>
+              <div class="right">Fall 2022</div>
+            </div>
+            <div class="meta"><span>Ministry of Science and ICT</span></div>
           </div>
-          <div class="meta"><span>Ministry of Science and ICT</span></div>
         </div>
 
         <div class="item">
-          <div class="title-row">
-            <div class="title">Teaching Assistant, Computational Linear Algebra in Computer Science</div>
-            <div class="right">Fall 2021–2024</div>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">Teaching Assistant, Computational Linear Algebra in Computer Science</div>
+              <div class="right">Fall 2021–2024</div>
+            </div>
+            <div class="meta"><span>Inha University</span></div>
           </div>
-          <div class="meta"><span>Inha University</span></div>
         </div>
 
         <div class="item">
-          <div class="title-row">
-            <div class="title">Teaching Assistant, Geometry; Topics in Algebra; Modern Algebra</div>
-            <div class="right">2020–2021</div>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row">
+              <div class="title">Teaching Assistant, Geometry; Topics in Algebra; Modern Algebra</div>
+              <div class="right">2020–2021</div>
+            </div>
+            <div class="meta"><span>Inha University</span></div>
           </div>
-          <div class="meta"><span>Inha University</span></div>
         </div>
       </div>
     </section>
 
     <!-- CERTIFICATIONS -->
-    <section id="certs">
-      <div class="section-title">
-        <h2><span class="mark" aria-hidden="true"></span>Licenses &amp; certifications</h2>
-        <div class="hint">credentials</div>
+    <section class="major" id="certs">
+      <div class="section-head">
+        <h2><span class="section-pill" aria-hidden="true"></span>Licenses &amp; certifications</h2>
       </div>
+      <div class="section-underline" aria-hidden="true"></div>
 
       <div class="list">
         <div class="item">
-          <div class="title-row"><div class="title">Teacher’s Certificate (Grade II)</div><div class="right">Aug 2021</div></div>
-          <div class="meta"><span>Ministry of Education, Republic of Korea</span></div>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row"><div class="title">Teacher’s Certificate (Grade II)</div><div class="right">Aug 2021</div></div>
+            <div class="meta"><span>Ministry of Education, Republic of Korea</span></div>
+          </div>
         </div>
+
         <div class="item">
-          <div class="title-row"><div class="title">Engineer Big Data Analysis</div><div class="right">Jul 2021</div></div>
-          <div class="meta"><span>Ministry of Science and ICT, Republic of Korea</span></div>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row"><div class="title">Engineer Big Data Analysis</div><div class="right">Jul 2021</div></div>
+            <div class="meta"><span>Ministry of Science and ICT, Republic of Korea</span></div>
+          </div>
         </div>
+
         <div class="item">
-          <div class="title-row"><div class="title">Advanced Data Analytics Semi-Professional</div><div class="right">May 2021</div></div>
-          <div class="meta"><span>Korea Data Agency</span></div>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row"><div class="title">Advanced Data Analytics Semi-Professional</div><div class="right">May 2021</div></div>
+            <div class="meta"><span>Korea Data Agency</span></div>
+          </div>
         </div>
+
         <div class="item">
-          <div class="title-row"><div class="title">Engineer Information Processing</div><div class="right">Nov 2020</div></div>
-          <div class="meta"><span>Ministry of Science and ICT, Republic of Korea</span></div>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row"><div class="title">Engineer Information Processing</div><div class="right">Nov 2020</div></div>
+            <div class="meta"><span>Ministry of Science and ICT, Republic of Korea</span></div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- SKILLS -->
-    <section id="skills">
-      <div class="section-title">
-        <h2><span class="mark" aria-hidden="true"></span>Skills</h2>
-        <div class="hint">compact</div>
+    <section class="major" id="skills">
+      <div class="section-head">
+        <h2><span class="section-pill" aria-hidden="true"></span>Skills</h2>
       </div>
+      <div class="section-underline" aria-hidden="true"></div>
 
       <div class="list">
         <div class="item">
-          <div class="title-row"><div class="title">Languages</div></div>
-          <div class="meta"><span>Korean (Native)</span><span>English (Intermediate)</span></div>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row"><div class="title">Languages</div></div>
+            <div class="meta"><span>Korean (Native)</span><span>English (Intermediate)</span></div>
+          </div>
         </div>
+
         <div class="item">
-          <div class="title-row"><div class="title">Technical</div></div>
-          <div class="meta"><span>C</span><span>C++</span><span>Python</span><span>PyTorch</span><span>TensorFlow</span></div>
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div class="title-row"><div class="title">Technical</div></div>
+            <div class="meta"><span>C</span><span>C++</span><span>Python</span><span>PyTorch</span><span>TensorFlow</span></div>
+          </div>
         </div>
       </div>
     </section>
@@ -649,17 +873,12 @@
   </div>
 
   <script>
-    // Last updated
     (function(){
       const el = document.getElementById('lastUpdated');
       const d = new Date();
-      const yyyy = d.getFullYear();
-      const mm = String(d.getMonth()+1).padStart(2,'0');
-      const dd = String(d.getDate()).padStart(2,'0');
-      el.textContent = `${yyyy}-${mm}-${dd}`;
+      el.textContent = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
     })();
 
-    // Publications search + filter
     (function(){
       const search = document.getElementById('pubSearch');
       const items = Array.from(document.querySelectorAll('.pub'));
@@ -678,6 +897,7 @@
 
           const okType = (currentFilter === 'all') || (type === currentFilter);
           const okQuery = !q || text.includes(q) || norm(kw).includes(q) || norm(year).includes(q);
+
           it.style.display = (okType && okQuery) ? '' : 'none';
         });
       }
