@@ -14,137 +14,46 @@
   <style>
     :root{
       /* Flat, clean, light */
-      --bg: #ffffff;
-      --surface: #f7f8fa;
-      --border: #e7e9ee;
-      --text: #111827;
-      --muted: #6b7280;
-      --muted2: #9ca3af;
-      --accent: #2563eb; /* blue */
-      --accent-weak: #e8efff;
+      --bg:#ffffff;
+      --surface:#f7f8fa;
+      --border:#e7e9ee;
+      --text:#111827;
+      --muted:#6b7280;
+      --muted2:#9ca3af;
+      --accent:#2563eb;
+      --accent-weak:#e8efff;
+
       --max: 980px;
       --r: 14px;
       --r2: 18px;
       --shadow: 0 1px 0 rgba(17,24,39,0.04);
     }
 
-    *{ box-sizing: border-box; }
-    html, body{ height: 100%; }
+    *{ box-sizing:border-box; }
+    html, body{ height:100%; }
     body{
-      margin: 0;
+      margin:0;
       font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic", sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.55;
       letter-spacing: -0.01em;
     }
-
-    a{ color: inherit; text-decoration: none; }
-    a:hover{ text-decoration: underline; }
+    a{ color:inherit; text-decoration:none; }
+    a:hover{ text-decoration:underline; }
 
     .wrap{ max-width: var(--max); margin: 0 auto; padding: 28px 18px 72px; }
 
-    /* Top bar */
-    .topbar{
-      position: sticky; top: 0;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-      z-index: 50;
-    }
-    .topbar-inner{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 12px 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .brand{
-      display:flex; align-items:center; gap: 10px;
-      min-width: 220px;
-    }
-    .mark{
-      width: 34px; height: 34px;
-      border-radius: 10px;
-      background: var(--accent);
-    }
-    .brand .txt{ display:flex; flex-direction:column; line-height: 1.15; }
-    .brand .txt strong{ font-size: 13px; font-weight: 700; }
-    .brand .txt span{ font-size: 12px; color: var(--muted); font-weight: 500; }
-
-    .nav{
-      display:flex; gap: 6px;
-      overflow:auto;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
-    .nav::-webkit-scrollbar{ display:none; }
-    .nav a{
-      font-size: 12px;
-      padding: 8px 10px;
-      border-radius: 999px;
-      color: var(--muted);
-      border: 1px solid transparent;
-      white-space: nowrap;
-      transition: .12s ease;
-    }
-    .nav a:hover{
-      color: var(--text);
-      border-color: var(--border);
-      background: var(--surface);
-      text-decoration: none;
-    }
-    .nav a.active{
-      color: var(--accent);
-      background: var(--accent-weak);
-      border-color: #d6e3ff;
-    }
-
-    .actions{ display:flex; gap: 8px; align-items:center; min-width: 220px; justify-content:flex-end; }
-    .btn{
-      font-size: 12px;
-      font-weight: 600;
-      padding: 9px 12px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      background: #fff;
-      color: var(--text);
-      cursor:pointer;
-      box-shadow: var(--shadow);
-      transition: .12s ease;
-      display:flex; align-items:center; gap: 8px;
-    }
-    .btn:hover{ background: var(--surface); text-decoration: none; }
-    .btn.primary{
-      border-color: #cfe0ff;
-      background: var(--accent-weak);
-      color: var(--accent);
-    }
-    .pill{
-      font-size: 12px;
-      padding: 9px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: #fff;
-      color: var(--muted);
-      box-shadow: var(--shadow);
-    }
-    .pill:hover{ background: var(--surface); text-decoration:none; color: var(--text); }
-
-    /* Header block */
+    /* Hero */
     .hero{
-      margin-top: 18px;
       display:grid;
       grid-template-columns: 1.15fr .85fr;
       gap: 14px;
       align-items: stretch;
+      margin-bottom: 14px;
     }
-
     .card{
-      background: #fff;
+      background:#fff;
       border: 1px solid var(--border);
       border-radius: var(--r2);
       box-shadow: var(--shadow);
@@ -181,7 +90,9 @@
     }
 
     .links{
-      display:flex; flex-wrap: wrap; gap: 8px;
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
       margin-top: 10px;
     }
     .link{
@@ -212,7 +123,7 @@
       margin: 0 0 8px;
       font-size: 12px;
       color: var(--muted);
-      font-weight: 700;
+      font-weight: 800;
       text-transform: uppercase;
       letter-spacing: .03em;
     }
@@ -242,17 +153,10 @@
     .section-title h2{
       margin: 0;
       font-size: 14px;
-      font-weight: 800;
+      font-weight: 900;
       letter-spacing: .01em;
     }
     .section-title span{ font-size: 12px; color: var(--muted2); }
-
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      align-items: start;
-    }
 
     .list{ display:flex; flex-direction: column; gap: 10px; }
 
@@ -265,7 +169,7 @@
     .item h3{
       margin: 0;
       font-size: 13px;
-      font-weight: 800;
+      font-weight: 900;
       line-height: 1.35;
     }
     .meta2{
@@ -291,12 +195,7 @@
       justify-content: space-between;
       margin: 8px 0 10px;
     }
-    .search{
-      flex: 1 1 260px;
-      display:flex;
-      gap: 8px;
-      align-items:center;
-    }
+    .search{ flex: 1 1 260px; display:flex; gap: 8px; align-items:center; }
     .search input{
       width: 100%;
       border: 1px solid var(--border);
@@ -338,58 +237,48 @@
       flex-wrap: wrap;
     }
 
-    /* Responsive */
+    /* One-column after education */
+    .onecol{ display:block; }
+
+    /* Small helper */
+    .inline-actions{
+      display:flex; gap: 8px; flex-wrap: wrap; align-items:center;
+      margin-top: 12px;
+    }
+    .btn{
+      font-size: 12px;
+      font-weight: 700;
+      padding: 9px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #fff;
+      cursor:pointer;
+      box-shadow: var(--shadow);
+      transition: .12s ease;
+    }
+    .btn:hover{ background: var(--surface); }
+    .btn.primary{
+      border-color:#cfe0ff;
+      background: var(--accent-weak);
+      color: var(--accent);
+    }
+
     @media (max-width: 980px){
       .hero{ grid-template-columns: 1fr; }
-      .grid{ grid-template-columns: 1fr; }
-      .actions{ min-width: unset; }
-      .brand{ min-width: unset; }
     }
 
     @media print{
-      .topbar{ position: static; }
-      .nav, .actions, .filters, .pub-controls{ display:none !important; }
-      body{ background: #fff; }
-      .card{ box-shadow: none; }
+      .pub-controls, .inline-actions{ display:none !important; }
+      body{ background:#fff; }
+      .card{ box-shadow:none; }
       .hero-side{ background:#fff; }
     }
   </style>
 </head>
 
 <body>
-  <!-- Top navigation -->
-  <div class="topbar" id="top">
-    <div class="topbar-inner">
-      <div class="brand">
-        <div class="mark" aria-hidden="true"></div>
-        <div class="txt">
-          <strong>Seokho Ahn</strong>
-          <span>Ph.D. Student · Inha University</span>
-        </div>
-      </div>
-
-      <nav class="nav" aria-label="Sections">
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#publications">Publications</a>
-        <a href="#patents">Patents</a>
-        <a href="#experience">Experience</a>
-        <a href="#awards">Awards</a>
-        <a href="#teaching">Teaching</a>
-        <a href="#certs">Licenses</a>
-        <a href="#skills">Skills</a>
-      </nav>
-
-      <div class="actions">
-        <a class="pill" href="mailto:sokho0514@gmail.com">sokho0514@gmail.com</a>
-        <button class="btn" onclick="window.print()">Print</button>
-        <a class="btn primary" href="assets/cv.pdf">PDF</a>
-      </div>
-    </div>
-  </div>
-
   <div class="wrap">
-    <!-- Hero -->
+    <!-- HERO (no sticky header) -->
     <div class="hero" id="about">
       <div class="card hero-main">
         <h1 class="headline">Seokho Ahn</h1>
@@ -411,13 +300,19 @@
           <a class="link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
           <a class="link" href="https://orcid.org/" target="_blank" rel="noreferrer">ORCID</a>
         </div>
+
+        <div class="inline-actions">
+          <a class="btn primary" href="assets/cv.pdf">Download PDF</a>
+          <button class="btn" onclick="window.print()">Print</button>
+          <a class="btn" href="mailto:sokho0514@gmail.com">Email</a>
+        </div>
       </div>
 
       <div class="card hero-side">
         <div class="side-block">
           <h3>Contact</h3>
-          <div class="row"><span class="k">Email</span><span class="v"><a href="mailto:sokho0514@gmail.com">sokho0514@gmail.com</a></span></div>
-          <div class="row"><span class="k">Mobile</span><span class="v">+82 10-4903-1420</span></div>
+          <div class="row"><span class="k">Email</span><span class="v">sokho0514 [at] gmail.com</span></div>
+          <div class="row"><span class="k">Mobile</span><span class="v"></span></div>
           <div class="row"><span class="k">PDF CV</span><span class="v"><a href="assets/cv.pdf">assets/cv.pdf</a></span></div>
         </div>
 
@@ -442,7 +337,7 @@
       </div>
     </div>
 
-    <!-- Education -->
+    <!-- EDUCATION -->
     <section class="card section-card" id="education">
       <div class="section-title"><h2>Education</h2><span>degrees</span></div>
       <div class="list">
@@ -462,66 +357,67 @@
       </div>
     </section>
 
-    <!-- Publications -->
-    <section class="card section-card" id="publications">
-      <div class="section-title"><h2>International publications</h2><span>search + filter</span></div>
+    <!-- Everything below Education: ONE COLUMN -->
+    <div class="onecol">
+      <!-- PUBLICATIONS -->
+      <section class="card section-card" id="publications">
+        <div class="section-title"><h2>International publications</h2><span>search + filter</span></div>
 
-      <div class="pub-controls">
-        <div class="search">
-          <input id="pubSearch" type="search" placeholder="Search by title, venue, year, keyword" />
+        <div class="pub-controls">
+          <div class="search">
+            <input id="pubSearch" type="search" placeholder="Search by title, venue, year, keyword" />
+          </div>
+          <div class="filters" role="tablist" aria-label="Publication filters">
+            <div class="filter active" data-filter="all" role="tab" aria-selected="true">All</div>
+            <div class="filter" data-filter="conference" role="tab">Conference</div>
+            <div class="filter" data-filter="journal" role="tab">Journal</div>
+          </div>
         </div>
-        <div class="filters" role="tablist" aria-label="Publication filters">
-          <div class="filter active" data-filter="all" role="tab" aria-selected="true">All</div>
-          <div class="filter" data-filter="conference" role="tab">Conference</div>
-          <div class="filter" data-filter="journal" role="tab">Journal</div>
+
+        <div class="list" id="pubList">
+          <article class="item pub" data-type="conference" data-year="2025" data-keywords="aaai calibration sensor time-series iot">
+            <h3>Real-time Calibration Model for Low-cost Sensor in Fine-grained Time series</h3>
+            <div class="meta2"><span><strong>AAAI 2025</strong></span><span>Seokho Ahn; Hyungjin Kim; Sungbok Shin; Young-Duk Seo</span></div>
+          </article>
+
+          <article class="item pub" data-type="conference" data-year="2025" data-keywords="sac knowledge graph llm interoperability recommender oral">
+            <h3>Topic-Aware Knowledge Graph with Large Language Models for Interoperability in Recommender Systems (Oral)</h3>
+            <div class="meta2"><span><strong>SAC 2025</strong></span><span>Minhye Jeon; Seokho Ahn; Young-Duk Seo</span></div>
+          </article>
+
+          <article class="item pub" data-type="conference" data-year="2025" data-keywords="sac korean text analyzer oral nlp">
+            <h3>UKTA: Unified Korean Text Analyzer (Oral)</h3>
+            <div class="meta2"><span><strong>SAC 2025</strong></span><span>Seokho Ahn*; Junhyung Park*; Ganghee Go*; et al. (* equal contribution)</span></div>
+          </article>
+
+          <article class="item pub" data-type="journal" data-year="2024" data-keywords="ieee iot journal calibration sensors">
+            <h3>SenDaL: An Effective and Efficient Calibration Framework of Low-cost Sensors for Daily Life</h3>
+            <div class="meta2"><span><strong>IEEE Internet of Things Journal</strong> (11:11), Jun 2024</span><span>Seokho Ahn; Hyungjin Kim; Euijong Lee; Young-Duk Seo</span></div>
+          </article>
+
+          <article class="item pub" data-type="journal" data-year="2024" data-keywords="softwarex korean cohesion morpheme">
+            <h3>Morpheme-based Korean text cohesion analyzer</h3>
+            <div class="meta2"><span><strong>SoftwareX</strong>, Vol. 26, May 2024</span><span>Dong-Hyun Kim*; Seokho Ahn*; Euijong Lee; Young-Duk Seo (* equal contribution)</span></div>
+          </article>
+
+          <article class="item pub" data-type="conference" data-year="2024" data-keywords="sac knowledge graph recommender oral">
+            <h3>RecKG: Knowledge Graph for Recommender Systems (Oral)</h3>
+            <div class="meta2"><span><strong>SAC 2024</strong></span><span>Junhyuk Kwon; Seokho Ahn; Young-Duk Seo</span></div>
+          </article>
+
+          <article class="item pub" data-type="conference" data-year="2024" data-keywords="icce low-cost sensors home devices oral">
+            <h3>Practical Implementation of Upgraded Low-Cost Sensors in Everyday Home Devices (Oral)</h3>
+            <div class="meta2"><span><strong>ICCE 2024</strong></span><span>Seokho Ahn; Hyungjin Kim; Euijong Lee; Young-Duk Seo</span></div>
+          </article>
+
+          <article class="item pub" data-type="conference" data-year="2023" data-keywords="sac relation modeling knowledge graph interoperability oral">
+            <h3>Relation Modeling on Knowledge Graph for Interoperability in Recommender Systems (Oral)</h3>
+            <div class="meta2"><span><strong>SAC 2023</strong></span><span>SeungJoo Lee*; Seokho Ahn*; Young-Duk Seo (* equal contribution)</span></div>
+          </article>
         </div>
-      </div>
+      </section>
 
-      <div class="list" id="pubList">
-        <article class="item pub" data-type="conference" data-year="2025" data-keywords="aaai calibration sensor time-series iot">
-          <h3>Real-time Calibration Model for Low-cost Sensor in Fine-grained Time series</h3>
-          <div class="meta2"><span><strong>AAAI 2025</strong></span><span>Seokho Ahn; Hyungjin Kim; Sungbok Shin; Young-Duk Seo</span></div>
-        </article>
-
-        <article class="item pub" data-type="conference" data-year="2025" data-keywords="sac knowledge graph llm interoperability recommender oral">
-          <h3>Topic-Aware Knowledge Graph with Large Language Models for Interoperability in Recommender Systems (Oral)</h3>
-          <div class="meta2"><span><strong>SAC 2025</strong></span><span>Minhye Jeon; Seokho Ahn; Young-Duk Seo</span></div>
-        </article>
-
-        <article class="item pub" data-type="conference" data-year="2025" data-keywords="sac korean text analyzer oral nlp">
-          <h3>UKTA: Unified Korean Text Analyzer (Oral)</h3>
-          <div class="meta2"><span><strong>SAC 2025</strong></span><span>Seokho Ahn*; Junhyung Park*; Ganghee Go*; et al. (* equal contribution)</span></div>
-        </article>
-
-        <article class="item pub" data-type="journal" data-year="2024" data-keywords="ieee iot journal calibration sensors">
-          <h3>SenDaL: An Effective and Efficient Calibration Framework of Low-cost Sensors for Daily Life</h3>
-          <div class="meta2"><span><strong>IEEE Internet of Things Journal</strong> (11:11), Jun 2024</span><span>Seokho Ahn; Hyungjin Kim; Euijong Lee; Young-Duk Seo</span></div>
-        </article>
-
-        <article class="item pub" data-type="journal" data-year="2024" data-keywords="softwarex korean cohesion morpheme">
-          <h3>Morpheme-based Korean text cohesion analyzer</h3>
-          <div class="meta2"><span><strong>SoftwareX</strong>, Vol. 26, May 2024</span><span>Dong-Hyun Kim*; Seokho Ahn*; Euijong Lee; Young-Duk Seo (* equal contribution)</span></div>
-        </article>
-
-        <article class="item pub" data-type="conference" data-year="2024" data-keywords="sac knowledge graph recommender oral">
-          <h3>RecKG: Knowledge Graph for Recommender Systems (Oral)</h3>
-          <div class="meta2"><span><strong>SAC 2024</strong></span><span>Junhyuk Kwon; Seokho Ahn; Young-Duk Seo</span></div>
-        </article>
-
-        <article class="item pub" data-type="conference" data-year="2024" data-keywords="icce low-cost sensors home devices oral">
-          <h3>Practical Implementation of Upgraded Low-Cost Sensors in Everyday Home Devices (Oral)</h3>
-          <div class="meta2"><span><strong>ICCE 2024</strong></span><span>Seokho Ahn; Hyungjin Kim; Euijong Lee; Young-Duk Seo</span></div>
-        </article>
-
-        <article class="item pub" data-type="conference" data-year="2023" data-keywords="sac relation modeling knowledge graph interoperability oral">
-          <h3>Relation Modeling on Knowledge Graph for Interoperability in Recommender Systems (Oral)</h3>
-          <div class="meta2"><span><strong>SAC 2023</strong></span><span>SeungJoo Lee*; Seokho Ahn*; Young-Duk Seo (* equal contribution)</span></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="grid">
-      <!-- Patents -->
+      <!-- PATENTS -->
       <section class="card section-card" id="patents">
         <div class="section-title"><h2>Patents</h2><span>applications</span></div>
         <div class="list">
@@ -544,7 +440,7 @@
         </div>
       </section>
 
-      <!-- Experience -->
+      <!-- EXPERIENCE -->
       <section class="card section-card" id="experience">
         <div class="section-title"><h2>Research experience</h2><span>roles</span></div>
         <div class="list">
@@ -572,10 +468,8 @@
           </article>
         </div>
       </section>
-    </section>
 
-    <section class="grid">
-      <!-- Awards -->
+      <!-- AWARDS -->
       <section class="card section-card" id="awards">
         <div class="section-title"><h2>Selected honors and awards</h2><span>recognitions</span></div>
         <div class="list">
@@ -602,7 +496,7 @@
         </div>
       </section>
 
-      <!-- Teaching -->
+      <!-- TEACHING -->
       <section class="card section-card" id="teaching">
         <div class="section-title"><h2>Teaching experience</h2><span>roles</span></div>
         <div class="list">
@@ -628,10 +522,8 @@
           </article>
         </div>
       </section>
-    </section>
 
-    <section class="grid">
-      <!-- Certifications -->
+      <!-- CERTIFICATIONS -->
       <section class="card section-card" id="certs">
         <div class="section-title"><h2>Licenses &amp; certifications</h2><span>credentials</span></div>
         <div class="list">
@@ -642,7 +534,7 @@
         </div>
       </section>
 
-      <!-- Skills -->
+      <!-- SKILLS -->
       <section class="card section-card" id="skills">
         <div class="section-title"><h2>Skills</h2><span>compact</span></div>
         <div class="list">
@@ -656,12 +548,12 @@
           </article>
         </div>
       </section>
-    </section>
 
-    <footer>
-      <div>Last updated: <span id="lastUpdated"></span></div>
-      <div><a class="pill" href="#top">Back to top</a></div>
-    </footer>
+      <footer>
+        <div>Last updated: <span id="lastUpdated"></span></div>
+        <div><a class="chip" href="#about" style="text-decoration:none;">Back to top</a></div>
+      </footer>
+    </div>
   </div>
 
   <script>
@@ -675,26 +567,7 @@
       el.textContent = `${yyyy}-${mm}-${dd}`;
     })();
 
-    // Active nav highlight
-    (function(){
-      const links = Array.from(document.querySelectorAll('.nav a'));
-      const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
-
-      const setActive = () => {
-        const y = window.scrollY + 110;
-        let idx = 0;
-        for (let i=0; i<sections.length; i++){
-          if (sections[i].offsetTop <= y) idx = i;
-        }
-        links.forEach(a => a.classList.remove('active'));
-        if (links[idx]) links[idx].classList.add('active');
-      };
-
-      window.addEventListener('scroll', setActive, { passive: true });
-      setActive();
-    })();
-
-    // Publication search + filter
+    // Publications search + filter
     (function(){
       const search = document.getElementById('pubSearch');
       const items = Array.from(document.querySelectorAll('.pub'));
@@ -727,11 +600,11 @@
         });
       });
 
-      search.addEventListener('input', apply);
+      if (search) search.addEventListener('input', apply);
       apply();
     })();
 
-    // Smooth scroll
+    // Smooth scroll for internal anchors
     (function(){
       document.addEventListener('click', (e) => {
         const a = e.target.closest('a[href^="#"]');
