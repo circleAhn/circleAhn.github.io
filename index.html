@@ -21,6 +21,7 @@
       /* Section emphasis (more visible, still minimal) */
       --section-accent:#1d4ed8;     /* blue */
       --section-accent-soft:#eff6ff;
+      --section-accent-hard:#123699;
 
       --section-accent-red:#d81d1d;     /* red */
 
@@ -106,6 +107,8 @@
     .topline strong{ color: var(--text); font-weight: 720; }
     .sep{ color: var(--muted2); }
 
+    .section{ color: var(--section-accent-hard);}
+
     .actions{
       margin-top: 16px;
       display:flex;
@@ -159,7 +162,7 @@
       border-radius: 999px;
       background: var(--section-accent);
       opacity: .95;
-      transform: translateY(1px);
+      transform: translateY(-1px);
     }
     .hint{
       font-size: 12px;
@@ -885,7 +888,7 @@
     </section>
 
     <!-- SKILLS -->
-    <section class="major" id="skills">
+    <!-- <section class="major" id="skills">
       <div class="section-head">
         <h2><span class="section-pill" aria-hidden="true"></span>Skills</h2>
       </div>
@@ -908,7 +911,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <footer>
       <div>Last updated: <span id="lastUpdated"></span></div>
