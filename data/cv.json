@@ -1,0 +1,161 @@
+{
+  "lastUpdated": "2026-06-30",
+  "publications": [
+    {
+      "type": "conference",
+      "year": "2026",
+      "venue": "KDD 2026",
+      "title": "Enriching Semantic Profiles into Knowledge Graph for Recommender Systems Using Large Language Models",
+      "authorsHtml": "<strong>Seokho Ahn</strong>; Sungbok Shin; Young-Duk Seo",
+      "tags": [
+        {
+          "label": "BK IF4",
+          "className": "redtag"
+        }
+      ],
+      "keywords": "kdd recommend profile profiling user llm large language model kg knowledge graph"
+    },
+    {
+      "type": "conference",
+      "year": "2025",
+      "venue": "ICCV 2025",
+      "title": "Draw Your Mind: Personalized Generation via Condition-Level Modeling in Text-to-Image Diffusion Models",
+      "authorsHtml": "Hyungjin Kim; <strong>Seokho Ahn</strong>; Young-Duk Seo",
+      "tags": [
+        {
+          "label": "BK IF4",
+          "className": "redtag"
+        }
+      ],
+      "keywords": "iccv diffusion personalized generation drum text image condition"
+    },
+    {
+      "type": "conference",
+      "year": "2025",
+      "venue": "AAAI 2025",
+      "title": "Real-Time Calibration Model for Low-Cost Sensor in Fine-Grained Time Series",
+      "authorsHtml": "<strong>Seokho Ahn</strong>; Hyungjin Kim; Sungbok Shin; Young-Duk Seo",
+      "tags": [
+        {
+          "label": "BK IF4",
+          "className": "redtag"
+        }
+      ],
+      "keywords": "aaai calibration sensor time-series iot"
+    },
+    {
+      "type": "conference",
+      "year": "2025",
+      "venue": "SAC 2025",
+      "title": "Topic-Aware Knowledge Graph with Large Language Models for Interoperability in Recommender Systems",
+      "authorsHtml": "Minhye Jeon; <strong>Seokho Ahn</strong>; Young-Duk Seo",
+      "tags": [
+        {
+          "label": "Oral",
+          "className": "tag"
+        },
+        {
+          "label": "BK IF1",
+          "className": "redtag"
+        }
+      ],
+      "keywords": "sac knowledge graph llm interoperability recommender oral"
+    },
+    {
+      "type": "conference",
+      "year": "2025",
+      "venue": "SAC 2025",
+      "title": "UKTA: Unified Korean Text Analyzer",
+      "authorsHtml": "<strong>Seokho Ahn</strong>*; Junhyung Park*; Ganghee Go*; Chulhui Kim; Jiho Jung; Myung Sun Shin; Do-Guk Kim; Young Duk Seo (* equal contribution)",
+      "tags": [
+        {
+          "label": "Oral",
+          "className": "tag"
+        },
+        {
+          "label": "BK IF1",
+          "className": "redtag"
+        }
+      ],
+      "keywords": "sac korean text analyzer oral nlp"
+    },
+    {
+      "type": "journal",
+      "year": "2024",
+      "venue": "IoTJ 2024",
+      "title": "SenDaL: An Effective and Efficient Calibration Framework of Low-cost Sensors for Daily Life",
+      "authorsHtml": "<strong>Seokho Ahn</strong>; Hyungjin Kim; Euijong Lee; Young-Duk Seo",
+      "tags": [
+        {
+          "label": "JCR top 5%",
+          "className": "redtag"
+        }
+      ],
+      "keywords": "ieee iot journal calibration sensors"
+    },
+    {
+      "type": "journal",
+      "year": "2024",
+      "venue": "SoftwareX 2024",
+      "title": "Morpheme-based Korean text cohesion analyzer",
+      "authorsHtml": "Dong-Hyun Kim*; <strong>Seokho Ahn</strong>*; Euijong Lee; Young-Duk Seo (* equal contribution)",
+      "tags": [
+        {
+          "label": "BK IF1",
+          "className": "redtag"
+        }
+      ],
+      "keywords": "softwarex korean cohesion morpheme"
+    },
+    {
+      "type": "conference",
+      "year": "2024",
+      "venue": "SAC 2024",
+      "title": "RecKG: Knowledge Graph for Recommender Systems",
+      "authorsHtml": "Junhyuk Kwon; <strong>Seokho Ahn</strong>; Young-Duk Seo",
+      "tags": [
+        {
+          "label": "Oral",
+          "className": "tag"
+        },
+        {
+          "label": "BK IF1",
+          "className": "redtag"
+        }
+      ],
+      "keywords": "sac knowledge graph recommender oral"
+    },
+    {
+      "type": "conference",
+      "year": "2024",
+      "venue": "ICCE 2024",
+      "title": "Practical Implementation of Upgraded Low-Cost Sensors in Everyday Home Devices",
+      "authorsHtml": "<strong>Seokho Ahn</strong>; Hyungjin Kim; Euijong Lee; Young-Duk Seo",
+      "tags": [
+        {
+          "label": "Oral",
+          "className": "tag"
+        }
+      ],
+      "keywords": "icce low-cost sensors home devices oral"
+    },
+    {
+      "type": "conference",
+      "year": "2023",
+      "venue": "SAC 2023",
+      "title": "Relation Modeling on Knowledge Graph for Interoperability in Recommender Systems",
+      "authorsHtml": "SeungJoo Lee*; <strong>Seokho Ahn</strong>*; Young-Duk Seo (* equal contribution)",
+      "tags": [
+        {
+          "label": "Oral",
+          "className": "tag"
+        },
+        {
+          "label": "BK IF1",
+          "className": "redtag"
+        }
+      ],
+      "keywords": "sac relation modeling knowledge graph interoperability oral"
+    }
+  ]
+}
