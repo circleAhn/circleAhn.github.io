@@ -4,10 +4,46 @@
     {
       "type": "conference",
       "year": "2026",
+      "venue": "CVPR 2026",
+      "title": "Foundation Encoders Are All You Need for Preference-Aware Personalization",
+      "authorsHtml": "Hyungjin Kim; <strong>Seokho Ahn</strong>; Young-Duk Seo",
+      "tags": [
+        {
+          "label": "BK IF4",
+          "className": "redtag"
+        }
+      ],
+      "keywords": "cvpr foundation encoders diffusion personalized generation fan text image condition personalization"
+    },
+    {
+      "type": "conference",
+      "year": "2026",
+      "venue": "SAC 2026",
+      "title": "From Evaluation to Feedback: A Feature-Based and LLM-Constrained Tool for Korean Writing Assessment",
+      "authorsHtml": "Chanwoo Jang; Ganghee Go; Jinyong Yun; <strong>Seokho Ahn</strong>; Myungsun Shin; Ho-Hyun Kil; Sungmin Chang; Do-Guk Kim; Young-Duk Seo",
+      "tags": [
+        {
+          "label": "Oral",
+          "className": "tag"
+        },
+        {
+          "label": "BK IF1",
+          "className": "redtag"
+        }
+      ],
+      "keywords": "sac korean text analyzer oral nlp evaluation feedback korean writing assessment"
+    },
+    {
+      "type": "conference",
+      "year": "2026",
       "venue": "KDD 2026",
       "title": "Enriching Semantic Profiles into Knowledge Graph for Recommender Systems Using Large Language Models",
       "authorsHtml": "<strong>Seokho Ahn</strong>; Sungbok Shin; Young-Duk Seo",
       "tags": [
+        {
+          "label": "Oral",
+          "className": "tag"
+        },
         {
           "label": "BK IF4",
           "className": "redtag"
